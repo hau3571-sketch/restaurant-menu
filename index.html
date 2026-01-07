@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Menu</title>
+
+    <!-- Professional touch -->
+    <meta name="theme-color" content="#ffffff">
+    <meta name="robots" content="noindex">
+
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont;
+            margin: 0;
+            padding: 16px;
+            background: #fafafa;
+            color: #222;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            margin-top: 32px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 4px;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            font-size: 16px;
+        }
+
+        .price {
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="restaurant"></h1>
+    <div id="menu"></div>
+
+    <script>
+        fetch('menu.json')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('restaurant').innerText = data.restaurant;
+
+                const menu = document.getElementById('menu');
+                data.categories.forEach(cat => {
+                    menu.innerHTML += `<h2>${cat.name}</h2>`;
+                    cat.items.forEach(item => {
+                        menu.innerHTML += `
+            <div class="item">
+              <span>${item.name}</span>
+              <span class="price">${item.price}</span>
+            </div>
+          `;
+                    });
+                });
+            });
+    </script>
+
+</body>
+
+</html>
