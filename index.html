@@ -4,71 +4,322 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Menu</title>
+    <title>Tiệm Crepe Sầu Riêng Bắt Ổn - Menu</title>
 
     <!-- Professional touch -->
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#f5e6d3">
     <meta name="robots" content="noindex">
+    <meta name="description" content="Tiệm Crepe Sầu Riêng Bắt Ổn - 549/71/8 Lê Văn Thọ p11 Gò Vấp">
 
     <style>
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont;
+        * {
             margin: 0;
-            padding: 16px;
-            background: #fafafa;
-            color: #222;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        h1 {
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5e6d3 0%, #e8d5c4 100%);
+            color: #333;
+            min-height: 100vh;
+            padding-bottom: 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        header {
             text-align: center;
-            margin-bottom: 24px;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
         }
 
-        h2 {
-            margin-top: 32px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 4px;
+        .header-title {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #8b4513;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .item {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            font-size: 16px;
+        .header-subtitle {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 5px;
         }
 
-        .price {
+        .header-address {
+            font-size: 0.95em;
+            color: #888;
+            font-style: italic;
+        }
+
+        /* Menu Image Section */
+        .menu-section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-title {
+            text-align: center;
+            font-size: 2em;
+            color: #8b4513;
+            margin-bottom: 25px;
             font-weight: 600;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .menu-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #8b4513, #d2691e);
+            border-radius: 2px;
+        }
+
+        .menu-image-container {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-image:hover {
+            transform: scale(1.02);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #fff 0%, #f9f9f9 100%);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            margin-bottom: 30px;
+        }
+
+        .contact-title {
+            text-align: center;
+            font-size: 2em;
+            color: #8b4513;
+            margin-bottom: 30px;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .contact-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #8b4513, #d2691e);
+            border-radius: 2px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-color: #d2691e;
+        }
+
+        .contact-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .contact-label {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #8b4513;
+            margin-bottom: 10px;
+        }
+
+        .contact-value {
+            font-size: 1.1em;
+            color: #555;
+            word-break: break-word;
+        }
+
+        .contact-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #8b4513 0%, #d2691e 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .contact-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 1.8em;
+            }
+
+            .menu-title,
+            .contact-title {
+                font-size: 1.5em;
+            }
+
+            .menu-section,
+            .contact-section {
+                padding: 20px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container > * {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .menu-section {
+            animation-delay: 0.1s;
+        }
+
+        .contact-section {
+            animation-delay: 0.2s;
         }
     </style>
 </head>
 
 <body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1 class="header-title">🥞 Tiệm Crepe Sầu Riêng Bất Ổn</h1>
+            <p class="header-subtitle">Crepe ngàn lớp siêu sầu riêng</p>
+            <p class="header-address">📍 549/71/8 Lê Văn Thọ p11 Gò Vấp</p>
+        </header>
 
-    <h1 id="restaurant"></h1>
-    <div id="menu"></div>
-
-    <script>
-        fetch('menu.json')
-            .then(res => res.json())
-            .then(data => {
-                document.getElementById('restaurant').innerText = data.restaurant;
-
-                const menu = document.getElementById('menu');
-                data.categories.forEach(cat => {
-                    menu.innerHTML += `<h2>${cat.name}</h2>`;
-                    cat.items.forEach(item => {
-                        menu.innerHTML += `
-            <div class="item">
-              <span>${item.name}</span>
-              <span class="price">${item.price}</span>
+        <!-- Menu Image Section -->
+        <section class="menu-section">
+            <h2 class="menu-title">📋 Thực Đơn</h2>
+            <div class="menu-image-container">
+                <img src="menu.png" alt="Menu Tiệm Crepe Sầu Riêng" class="menu-image">
             </div>
-          `;
-                    });
-                });
-            });
-    </script>
+        </section>
 
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <h2 class="contact-title">📞 Liên Hệ Đặt Hàng</h2>
+            <div class="contact-grid">
+                <!-- Hotline -->
+                <div class="contact-card">
+                    <span class="contact-icon">📱</span>
+                    <div class="contact-label">Hotline</div>
+                    <div class="contact-value">0367131120</div>
+                    <a href="tel:0367131120" class="contact-link">Gọi ngay</a>
+                </div>
+
+                <!-- Zalo -->
+                <div class="contact-card">
+                    <span class="contact-icon">💬</span>
+                    <div class="contact-label">Zalo</div>
+                    <div class="contact-value">0367131120</div>
+                    <a href="https://zalo.me/0367131120" target="_blank" class="contact-link">Chat Zalo</a>
+                </div>
+
+                <!-- Facebook -->
+                <div class="contact-card">
+                    <span class="contact-icon">👍</span>
+                    <div class="contact-label">Facebook</div>
+                    <div class="contact-value">Ủn Ỉn (banhsaurieng)</div>
+                    <a href="https://www.facebook.com/banhsaurieng" target="_blank" class="contact-link">Nhắn tin FB</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2025 Tiệm Crepe Sầu Riêng Bắt Ổn - Món ngon mỗi ngày 🥞</p>
+        </footer>
+    </div>
 </body>
 
 </html>
